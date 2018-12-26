@@ -41,7 +41,8 @@ defmodule PoolEngine.MixProject do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:plug_cowboy, "~> 1.0"}
     ]
   end
 
