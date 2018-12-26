@@ -18,6 +18,6 @@ RUN mix local.hex --force \
 RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - && sudo apt-get install -y inotify-tools nodejs
 
 RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app/poolService
+WORKDIR /usr/src/app/poolEngine
 
 EXPOSE 4000
