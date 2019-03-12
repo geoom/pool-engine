@@ -13,7 +13,7 @@ config :poolEngine,
 config :poolEngine, PoolEngineWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "2ncdQj4FgzqankAzzAZTsdssrkk3hgIifgpKtjal5oTXuFmrBkFxEPC/3jEvrx07",
-  render_errors: [view: PoolEngineWeb.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: PoolEngineWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: PoolEngine.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
