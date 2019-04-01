@@ -41,9 +41,9 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :poolEngine, PoolEngine.Repo,
-  username: "nouser",
-  password: "nopassword",
-  database: "nodatabase",
+  username: "",
+  password: "",
+  database: "pool-dev",
   hostname: "localhost",
   pool_size: 10
 

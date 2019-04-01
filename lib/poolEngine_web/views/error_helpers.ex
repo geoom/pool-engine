@@ -3,6 +3,7 @@ defmodule PoolEngineWeb.ErrorHelpers do
   Conveniences for translating and building error messages.
   """
 
+  use Phoenix.HTML
 
   @doc """
   Generates tag for inlined form input errors.
