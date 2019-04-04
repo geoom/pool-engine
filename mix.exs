@@ -20,7 +20,7 @@ defmodule PoolEngine.MixProject do
   def application do
     [
       mod: {PoolEngine.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :comeonin]
     ]
   end
 
@@ -42,7 +42,8 @@ defmodule PoolEngine.MixProject do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:comeonin, "~> 2.5"}
     ]
   end
 
@@ -54,9 +55,9 @@ defmodule PoolEngine.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
-      "ecto.reset": ["ecto.drop", "ecto.setup"],
-      "test": ["ecto.create --quiet", "ecto.migrate", "test"]
+      "ecto.setup": ['ecto.create', 'ecto.migrate', 'run priv/repo/seeds.exs'],
+      "ecto.reset": ['ecto.drop', 'ecto.setup'],
+      "test": ['ecto.create --quiet', 'ecto.migrate', 'test']
     ]
   end
 end

@@ -43,7 +43,7 @@ config :phoenix, :plug_init_mode, :runtime
 config :poolEngine, PoolEngine.Repo,
   username: "",
   password: "",
-  database: "pool-dev",
+  database: "pool-development",
   hostname: "localhost",
   pool_size: 10
 
