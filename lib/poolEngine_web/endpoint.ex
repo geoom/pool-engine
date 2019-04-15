@@ -41,4 +41,5 @@ defmodule PoolEngineWeb.Endpoint do
     signing_salt: "yaDTtchU"
 
   plug PoolEngineWeb.Router
+  plug CORSPlug
 end

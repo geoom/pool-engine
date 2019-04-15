@@ -44,7 +44,8 @@ defmodule PoolEngine.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:comeonin, "~> 2.5"},
-      {:guardian, "~> 1.0"}
+      {:guardian, "~> 1.0"},
+      {:cors_plug, "~> 1.1"},
     ]
   end
 
@@ -56,9 +57,9 @@ defmodule PoolEngine.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      "ecto.setup": ['ecto.create', 'ecto.migrate', 'run priv/repo/seeds.exs'],
-      "ecto.reset": ['ecto.drop', 'ecto.setup'],
-      "test": ['ecto.create --quiet', 'ecto.migrate', 'test']
+      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      'test': ["ecto.create --quiet", "ecto.migrate", "test"]
     ]
   end
 end
