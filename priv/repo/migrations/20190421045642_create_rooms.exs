@@ -3,11 +3,13 @@ defmodule PoolEngine.Repo.Migrations.CreateRooms do
 
   def change do
     create table(:rooms) do
-      add :name, :string
-      add :topic, :string
+      add :name, :string, null: false
+      add :topic, :string, default: ""
 
       timestamps()
     end
+
+    create unique_index(:rooms, [:name])
 
   end
 end
