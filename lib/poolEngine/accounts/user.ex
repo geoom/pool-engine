@@ -6,6 +6,8 @@ defmodule PoolEngine.Accounts.User do
     field :email, :string
     field :username, :string
     field :password, :string
+    many_to_many :rooms, PoolEngine.Messaging.Room, join_through: "user_rooms"
+
     field :raw_password, :string, virtual: true
 
     timestamps()

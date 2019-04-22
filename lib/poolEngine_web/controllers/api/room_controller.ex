@@ -6,6 +6,8 @@ defmodule PoolEngineWeb.RoomController do
 
   action_fallback PoolEngineWeb.FallbackController
 
+  plug Guardian.Plug.EnsureAuthenticated, handler: PoolEngineWeb.SessionController
+
   def index(conn, _params) do
     rooms = Messaging.list_rooms()
     render(conn, "index.json", rooms: rooms)

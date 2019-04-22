@@ -12,7 +12,7 @@ defmodule PoolEngine.Messaging.Room do
   end
 
   @doc false
-  def changeset(room, attrs \\ %{})) do
+  def changeset(room, attrs \\ %{}) do
     room
     |> cast(attrs, [:name, :topic])
     |> validate_required([:name])

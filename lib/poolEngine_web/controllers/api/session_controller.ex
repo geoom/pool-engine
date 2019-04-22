@@ -1,5 +1,6 @@
-defmodule PoolEngine.SessionController do
+defmodule PoolEngineWeb.SessionController do
   use PoolEngineWeb, :controller
+
   alias PoolEngine.Accounts.User
 
   def create(conn, params) do

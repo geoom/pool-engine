@@ -11,6 +11,6 @@ defmodule PoolEngine.Repo.Migrations.CreateUserRooms do
 
     create index(:user_rooms, [:user_id])
     create index(:user_rooms, [:room_id])
-    create index(:user_rooms, [:user_id, :room_id], unique: true))
+    create index(:user_rooms, [:user_id, :room_id], unique: true)
   end
 end

@@ -14,12 +14,12 @@ defmodule PoolEngineWeb.UserController do
 
         new_conn
         |> put_status(:created)
-        |> render(PoolEngine.SessionView, "show.json", user: user, jwt: jwt)
+        |> render(PoolEngineWeb.SessionView, "show.json", user: user, jwt: jwt)
 
       {:error, changeset} ->
         conn
         |> put_status(:unprocessable_entity)
-        |> render(PoolEngine.ChangesetView, "error.json", changeset: changeset)
+        |> render(PoolEngineWeb.ChangesetView, "error.json", changeset: changeset)
     end
   end
 
