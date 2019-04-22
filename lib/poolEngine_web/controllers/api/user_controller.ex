@@ -4,6 +4,8 @@ defmodule PoolEngineWeb.UserController do
   alias PoolEngine.Accounts
   alias PoolEngine.Accounts.User
 
+  plug Guardian.Plug.EnsureAuthenticated, [handler: PoolEngineWeb.SessionController] when action in [:rooms]
+
   def create(conn, params) do
     changeset = User.registration_changeset(%User{}, params)
 
@@ -23,4 +25,11 @@ defmodule PoolEngineWeb.UserController do
     end
   end
 
+  def rooms(conn, _params) do
+    current_user = Guardian.Plug.current_resource(conn)
+    rooms = Repo.all(assoc(current_user, :rooms)
+
+    render(conn, PoolEngineWeb.RoomView, "index.json", %{rooms: rooms})
+  end
+  
 end
