@@ -3,6 +3,7 @@ defmodule PoolEngineWeb.RoomController do
 
   alias PoolEngine.Messaging
   alias PoolEngine.Messaging.Room
+  alias PoolEngine.Repo
 
   action_fallback PoolEngineWeb.FallbackController
 
