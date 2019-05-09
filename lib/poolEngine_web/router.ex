@@ -11,14 +11,9 @@ defmodule PoolEngineWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    # plug Guardian.Plug.Pipeline, module: PoolEngine.Guardian, error_handler: Guardian.Plug.ErrorHandler
     plug Guardian.Plug.VerifyHeader, realm: "Bearer"
     plug Guardian.Plug.LoadResource
-  end
-
-  scope "/", PoolEngineWeb do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
   end
 
   scope "/api", PoolEngineWeb do
@@ -34,5 +29,9 @@ defmodule PoolEngineWeb.Router do
     resources "/rooms", RoomController, only: [:index, :create]
     post "/rooms/:id/join", RoomController, :join
 
+  end
+
+  scope "/", PoolEngineWeb do
+    get "/*path", ApplicationController, :not_found
   end
 end

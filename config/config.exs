@@ -27,9 +27,13 @@ config :phoenix, :json_library, Jason
 
 # Use Guardain as Authentication Token Strategy
 config :guardian, PoolEngine.Guardian,
-  issuer: "pool_engine",
-  ttl: {30, :days},
-  verify_issuer: true
+  allowed_algos: ["HS512"],
+  issuer: "PoolEngine",
+  verify_module: Guardian.JWT,
+  ttl: { 30, :days },
+  allowed_drift: 2000,
+  verify_issuer: true,
+  serializer: PoolEngine.GuardianSerializer
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

@@ -44,7 +44,7 @@ defmodule PoolEngine.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:comeonin, "~> 2.5"},
-      {:guardian, "~> 1.0"},
+      {:guardian, "~> 0.14.0"},
       {:cors_plug, "~> 1.1"},
     ]
   end
